@@ -1,57 +1,167 @@
+import Icon from "@/components/ui/icon";
+
 const features = [
-  { label: "Профессиональные вспышки и постоянный свет" },
-  { label: "Сменные фоны: белый, чёрный, серый, цветные" },
-  { label: "Реквизит и аксессуары в наличии" },
-  { label: "Зона для переодевания" },
-  { label: "Wi-Fi и зарядка для устройств" },
-  { label: "Доступно с 13 лет без сопровождения взрослых" },
+  { icon: "Zap", label: "Профессиональные вспышки и постоянный свет" },
+  { icon: "Layers", label: "Сменные фоны: белый, чёрный, серый, цветные" },
+  { icon: "Sparkles", label: "Реквизит и аксессуары в наличии" },
+  { icon: "ShirtIcon", label: "Зона для переодевания" },
+  { icon: "Wifi", label: "Wi-Fi и зарядка для устройств" },
+  { icon: "Heart", label: "Доступно с 13 лет без сопровождения взрослых" },
 ];
+
+const packages = [
+  {
+    name: "Будни",
+    price: "2 500",
+    desc: "за час",
+    badge: null,
+    items: ["1–3 часа", "Любой фон", "Помощь с настройкой света"],
+  },
+  {
+    name: "Выходные",
+    price: "2 200",
+    desc: "за час · скидка 12%",
+    badge: "Выгодно",
+    items: ["Сб и Вс", "Любой фон", "Приоритетное бронирование"],
+  },
+  {
+    name: "Вечер",
+    price: "2 000",
+    desc: "за час · с 20:00",
+    badge: "Хит",
+    items: ["Пн–Пт после 20:00", "Любой фон", "Тихая атмосфера для арт-съёмки"],
+  },
+];
+
+const faq = [
+  { q: "Нужен ли опыт?", a: "Нет — мы поможем настроить свет и выбрать фон под твою идею." },
+  { q: "Можно с 13 лет?", a: "Да, с 13 лет без сопровождения взрослых. Берём ответственно." },
+  { q: "Как забронировать?", a: "Напиши нам в Telegram или позвони — подберём удобное время." },
+];
+
+const review = {
+  text: "Снимала здесь рилсы для TikTok — свет супер, персонал помог выставить всё как надо. Приду ещё!",
+  name: "Маша, 16 лет",
+};
 
 export default function Featured() {
   return (
-    <div id="pricing" className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0" style={{background: "linear-gradient(160deg, #fff8fe 0%, #f3e8ff 50%, #fff7e0 100%)"}}>
-      <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
-        <img
-          src="/images/desk.png"
-          alt="Фотостудия изнутри"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="flex-1 text-left lg:h-[800px] flex flex-col justify-center lg:mr-12 lg:order-1">
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Что входит в аренду</h3>
-        <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
-          Всё готово к съёмке — просто приходи и твори.
-        </p>
-        <ul className="mb-10 space-y-3">
-          {features.map((f) => (
-            <li key={f.label} className="flex items-center gap-3 text-neutral-700 text-base lg:text-lg">
-              <span className="w-2 h-2 rounded-full bg-black shrink-0" />
-              {f.label}
-            </li>
-          ))}
-        </ul>
+    <div
+      id="pricing"
+      className="min-h-screen px-6 py-20"
+      style={{ background: "linear-gradient(160deg, #fff8fe 0%, #f3e8ff 50%, #fff7e0 100%)" }}
+    >
+      <div className="max-w-6xl mx-auto">
 
-        <div className="flex flex-col sm:flex-row gap-6 mb-10">
-          <div className="border border-neutral-200 p-6 flex-1">
-            <p className="uppercase text-xs tracking-wide text-neutral-500 mb-2">Будни</p>
-            <p className="text-4xl font-bold text-neutral-900">2 500 ₽</p>
-            <p className="text-sm text-neutral-500 mt-1">за час</p>
-          </div>
-          <div className="border-2 p-6 flex-1 relative" style={{borderColor: "#c026d3"}}>
-            <span className="absolute -top-3 left-4 text-white text-xs px-3 py-1 uppercase tracking-wide" style={{background: "linear-gradient(90deg, #e040fb, #ff6ec7)"}}>Выгодно</span>
-            <p className="uppercase text-xs tracking-wide text-neutral-500 mb-2">Сб — Вс</p>
-            <p className="text-4xl font-bold text-neutral-900">2 200 ₽</p>
-            <p className="text-sm text-neutral-500 mt-1">за час · скидка 12%</p>
-          </div>
+        {/* Заголовок */}
+        <div className="text-center mb-16">
+          <p className="uppercase tracking-widest text-xs text-neutral-500 mb-3">Фотостудия · Аренда</p>
+          <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-4">
+            Всё готово к съёмке
+          </h2>
+          <p className="text-neutral-500 text-lg max-w-xl mx-auto">
+            Просто приходи и твори — оборудование, свет и атмосфера уже ждут тебя.
+          </p>
         </div>
 
-        <a
-          href="#booking"
-          className="px-6 py-3 text-sm cursor-pointer w-fit uppercase tracking-wide text-white font-semibold transition-all duration-300 hover:opacity-90"
-          style={{background: "linear-gradient(90deg, #e040fb, #ff6ec7)"}}
-        >
-          Забронировать
-        </a>
+        {/* Что входит */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+          {features.map((f) => (
+            <div
+              key={f.label}
+              className="flex items-start gap-3 bg-white/70 backdrop-blur rounded-2xl p-4 shadow-sm"
+            >
+              <span
+                className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: "linear-gradient(135deg, #e040fb, #ff6ec7)" }}
+              >
+                <Icon name={f.icon} size={15} className="text-white" />
+              </span>
+              <p className="text-sm text-neutral-700 leading-snug">{f.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Пакеты */}
+        <h3 className="uppercase text-xs tracking-widest text-neutral-500 mb-6 text-center">Тарифы</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {packages.map((pkg) => (
+            <div
+              key={pkg.name}
+              className="relative bg-white rounded-3xl p-8 shadow-md flex flex-col gap-4"
+            >
+              {pkg.badge && (
+                <span
+                  className="absolute -top-3 left-6 text-white text-xs px-4 py-1 rounded-full uppercase tracking-wide font-semibold"
+                  style={{ background: "linear-gradient(90deg, #e040fb, #ff6ec7)" }}
+                >
+                  {pkg.badge}
+                </span>
+              )}
+              <div>
+                <p className="uppercase text-xs tracking-wide text-neutral-400 mb-1">{pkg.name}</p>
+                <p className="text-5xl font-bold text-neutral-900">{pkg.price} <span className="text-2xl">₽</span></p>
+                <p className="text-sm text-neutral-400 mt-1">{pkg.desc}</p>
+              </div>
+              <ul className="space-y-2 flex-1">
+                {pkg.items.map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-sm text-neutral-600">
+                    <Icon name="Check" size={14} className="shrink-0" style={{ color: "#e040fb" }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#booking"
+                className="mt-2 block text-center py-3 rounded-xl text-sm font-semibold uppercase tracking-wide transition-all duration-300 hover:opacity-90 text-white"
+                style={{ background: "linear-gradient(90deg, #e040fb, #ff6ec7)" }}
+              >
+                Выбрать
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Отзыв + FAQ */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          {/* Отзыв */}
+          <div
+            className="rounded-3xl p-8 text-white flex flex-col justify-between"
+            style={{ background: "linear-gradient(135deg, #c026d3, #e040fb, #ff6ec7)" }}
+          >
+            <Icon name="Quote" size={36} className="opacity-50 mb-4" />
+            <p className="text-xl lg:text-2xl font-medium leading-snug mb-6">"{review.text}"</p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-white/30 flex items-center justify-center">
+                <Icon name="User" size={18} className="text-white" />
+              </div>
+              <p className="text-sm opacity-80">{review.name}</p>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="flex flex-col gap-4">
+            {faq.map((item) => (
+              <div key={item.q} className="bg-white/70 backdrop-blur rounded-2xl p-6 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <span
+                    className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                    style={{ background: "linear-gradient(135deg, #e040fb, #ff6ec7)" }}
+                  >
+                    <Icon name="HelpCircle" size={13} className="text-white" />
+                  </span>
+                  <div>
+                    <p className="font-semibold text-neutral-900 mb-1">{item.q}</p>
+                    <p className="text-sm text-neutral-500">{item.a}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
       </div>
     </div>
   );
