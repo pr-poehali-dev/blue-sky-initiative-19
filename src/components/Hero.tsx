@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="relative z-10 text-center text-white px-6">
         <p className="uppercase tracking-widest text-sm md:text-base opacity-80 mb-4">Фотостудия · Аренда по часам</p>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-          FLASHROOM
+          Я В КАДРЕ
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90 mb-8">
           Твоя площадка для съёмки — от 13 лет. Профессиональный свет, сменные фоны, душевная атмосфера.
