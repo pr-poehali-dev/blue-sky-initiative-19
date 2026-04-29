@@ -6,27 +6,27 @@ const features = [
   { icon: "Sparkles", label: "Реквизит и аксессуары в наличии" },
   { icon: "ShirtIcon", label: "Зона для переодевания" },
   { icon: "Wifi", label: "Wi-Fi и зарядка для устройств" },
-  { icon: "Heart", label: "Доступно с 13 лет без сопровождения взрослых" },
+  { icon: "Lock", label: "Снимаешь сам — никто не мешает и не смущает" },
 ];
 
 const packages = [
   {
     name: "Будни",
-    price: "2 500",
+    price: "3 500",
     desc: "за час",
     badge: null,
-    items: ["1–3 часа", "Любой фон", "Помощь с настройкой света"],
+    items: ["Пн — Пт", "Любой фон", "Помощь с настройкой света"],
   },
   {
     name: "Выходные",
-    price: "2 200",
-    desc: "за час · скидка 12%",
+    price: "4 000",
+    desc: "за час",
     badge: "Выгодно",
     items: ["Сб и Вс", "Любой фон", "Приоритетное бронирование"],
   },
   {
     name: "Вечер",
-    price: "2 000",
+    price: "3 000",
     desc: "за час · с 20:00",
     badge: "Хит",
     items: ["Пн–Пт после 20:00", "Любой фон", "Тихая атмосфера для арт-съёмки"],
@@ -40,7 +40,7 @@ const faq = [
 ];
 
 const review = {
-  text: "Снимала здесь рилсы для TikTok — свет супер, персонал помог выставить всё как надо. Приду ещё!",
+  text: "Свет настроила сама, никто не мешал — получила именно те кадры, которые хотела. Атмосфера просто огонь!",
   name: "Маша, 16 лет",
 };
 
@@ -61,6 +61,20 @@ export default function Featured() {
           </h2>
           <p className="text-neutral-500 text-lg max-w-xl mx-auto">
             Просто приходи и твори — оборудование, свет и атмосфера уже ждут тебя.
+          </p>
+        </div>
+
+        {/* Главный факт */}
+        <div
+          className="rounded-3xl p-8 md:p-12 mb-12 text-white text-center"
+          style={{ background: "linear-gradient(135deg, #c026d3, #e040fb, #ff9de2)" }}
+        >
+          <Icon name="Camera" size={40} className="mx-auto mb-4 opacity-80" />
+          <h3 className="text-2xl md:text-4xl font-bold leading-snug mb-3">
+            Ты снимаешь сам — в своём ритме,<br className="hidden md:block" /> без лишних глаз
+          </h3>
+          <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto">
+            Студия полностью в твоём распоряжении на всё время аренды. Никаких посторонних, никакого давления — только ты, свет и камера. Раскрепостись и получи кадры, о которых мечтал.
           </p>
         </div>
 
