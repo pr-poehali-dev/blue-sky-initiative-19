@@ -9,7 +9,7 @@ const features = [
 
 export default function Featured() {
   return (
-    <div id="pricing" className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
+    <div id="pricing" className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0" style={{background: "linear-gradient(160deg, #fff8fe 0%, #f3e8ff 50%, #fff7e0 100%)"}}>
       <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
         <img
           src="/images/desk.png"
@@ -37,8 +37,8 @@ export default function Featured() {
             <p className="text-4xl font-bold text-neutral-900">2 500 ₽</p>
             <p className="text-sm text-neutral-500 mt-1">за час</p>
           </div>
-          <div className="border-2 border-black p-6 flex-1 relative">
-            <span className="absolute -top-3 left-4 bg-black text-white text-xs px-3 py-1 uppercase tracking-wide">Выгодно</span>
+          <div className="border-2 p-6 flex-1 relative" style={{borderColor: "#c026d3"}}>
+            <span className="absolute -top-3 left-4 text-white text-xs px-3 py-1 uppercase tracking-wide" style={{background: "linear-gradient(90deg, #e040fb, #ff6ec7)"}}>Выгодно</span>
             <p className="uppercase text-xs tracking-wide text-neutral-500 mb-2">Сб — Вс</p>
             <p className="text-4xl font-bold text-neutral-900">2 200 ₽</p>
             <p className="text-sm text-neutral-500 mt-1">за час · скидка 12%</p>
@@ -47,7 +47,8 @@ export default function Featured() {
 
         <a
           href="#booking"
-          className="bg-black text-white border border-black px-6 py-3 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide"
+          className="px-6 py-3 text-sm cursor-pointer w-fit uppercase tracking-wide text-white font-semibold transition-all duration-300 hover:opacity-90"
+          style={{background: "linear-gradient(90deg, #e040fb, #ff6ec7)"}}
         >
           Забронировать
         </a>

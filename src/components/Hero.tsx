@@ -23,6 +23,7 @@ export default function Hero() {
           alt="Mountain landscape"
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0" style={{background: "linear-gradient(135deg, rgba(255,80,180,0.55) 0%, rgba(120,60,220,0.45) 50%, rgba(255,200,0,0.35) 100%)"}} />
       </motion.div>
 
       <div className="relative z-10 text-center text-white px-6">
@@ -35,7 +36,8 @@ export default function Hero() {
         </p>
         <a
           href="#booking"
-          className="inline-block bg-white text-black px-8 py-3 uppercase tracking-wide text-sm font-semibold hover:bg-neutral-200 transition-colors duration-300"
+          className="inline-block px-8 py-3 uppercase tracking-wide text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
+          style={{background: "linear-gradient(90deg, #e040fb, #ff6ec7, #ffd600)", backgroundSize: "200%"}}
         >
           Забронировать
         </a>
