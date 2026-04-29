@@ -6,19 +6,19 @@ export default function Header({ className }: HeaderProps) {
   return (
     <header className={`absolute top-0 left-0 right-0 z-10 p-6 ${className ?? ""}`}>
       <div className="flex justify-between items-center">
-        <div className="text-white text-sm uppercase tracking-wide">lumino</div>
+        <div className="text-white text-sm uppercase tracking-wide">FLASHROOM</div>
         <nav className="flex gap-8">
           <a
-            href="#about"
+            href="#pricing"
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
           >
-            О нас
+            Цены
           </a>
           <a
-            href="#contact"
+            href="#booking"
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
           >
-            Контакты
+            Забронировать
           </a>
         </nav>
       </div>
